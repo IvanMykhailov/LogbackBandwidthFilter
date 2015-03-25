@@ -6,12 +6,10 @@ version := "0.1-SNAPSHOT"
 
 scalaVersion := "2.10.4"
 
-libraryDependencies ++= Seq(
-  
-)
 
-//Tests
 libraryDependencies ++= Seq(
+  "net.logstash.logback" % "logstash-logback-encoder" % "4.2",
+  "ch.qos.logback" % "logback-classic" % "1.1.2",
   "org.scalatest" %% "scalatest" % "2.2.1" % "test"
 )
 
@@ -26,7 +24,5 @@ scalacOptions ++= Seq(
   , "-language:postfixOps"
   , "-language:implicitConversions"
 )
-
-seq(com.github.retronym.SbtOneJar.oneJarSettings: _*)
 
 net.virtualvoid.sbt.graph.Plugin.graphSettings
